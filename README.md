@@ -1,2 +1,1 @@
-# cloudron-humhub-app
-
+# Humhub Cloudron App

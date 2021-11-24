@@ -1,0 +1,42 @@
+{
+  "id": "ctpr.humhub.app",
+  "title": "Humhub",
+  "author": "Atridad Lahiji",
+  "description": "file://DESCRIPTION.md",
+  "tagline": "The flexible open source social media kit.",
+  "version": "1.1.1",
+  "healthCheckPath": "/",
+  "memoryLimit": 1342177280,
+  "httpPort": 80,
+  "manifestVersion": 2,
+  "website": "https://www.humhub.com",
+  "contactEmail": "me@atridad.dev",
+  "icon": "logo.png",
+  "addons": {
+    "mysql": {},
+    "localstorage": {
+      "ftp": {
+        "uid": 33,
+        "uname": "www-data"
+      }
+    },
+    "sendmail": {},
+    "ldap": {},
+    "scheduler": {
+      "queue": {
+          "schedule": "* * * * *",
+          "command": "/usr/bin/php /app/code/protected/yii queue/run --isolate=0"
+      },
+      "cron": {
+        "schedule": "* * * * *",
+        "command": "/usr/bin/php /app/code/protected/yii cron/run"
+      }
+    }
+  },
+  "tags": [ "apache", "php", "mysql", "social" ],
+  "changelog": "file://CHANGELOG",
+  "postInstallMessage": "file://POSTINSTALL.md",
+  "minBoxVersion": "6.1.2",
+  "forumUrl": "https://forum.cloudron.io/category/15/humhub",
+  "documentationUrl": "https://docs.cloudron.io/apps/humhub/"
+}

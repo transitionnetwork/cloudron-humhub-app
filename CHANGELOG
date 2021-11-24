@@ -1,0 +1,45 @@
+[0.1.0]
+- initial version
+
+[0.2.0]
+- fixed cron
+- removed disable_functions from /etc/php/7.4/cli/php.ini
+
+[0.3.0]
+- switch to using the php.ini in /app/data to enable functions
+- Set memory limit to 1.25GB for a better experience
+
+[0.4.0]
+- Fixed the disabling of debug mode
+- Added proper versioning in the Dockerfile
+
+[0.5.0]
+- Automated config
+
+[0.6.1]
+- Moved DB config to the correct config file
+
+[0.7.0]
+- Fixed compatability with modules
+- Automatically install the updater and ONLYOFFICE modules
+
+[0.8.0]
+- Moved app code to /app/code for secrity
+
+[1.0.0]
+- Updating is done cleanly now
+
+[1.0.1]
+- Enable pretty URLs by default
+
+[1.0.2]
+- Fixed line endings
+
+[1.0.3]
+- HOTFIX: Fixed start.sh perms
+
+[1.1.0]
+- Updated to HumHub 1.9.0
+
+[1.1.1]
+- Fixed issue where the new DB is not used when cloning from a backup
