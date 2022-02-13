@@ -46,6 +46,10 @@ else
     /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.port' "${CLOUDRON_MAIL_SMTP_PORT}"
     /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.username' "${CLOUDRON_MAIL_SMTP_USERNAME}"
     /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.password' "${CLOUDRON_MAIL_SMTP_PASSWORD}"
+
+    /usr/bin/php /app/code/protected/yii cache/flush-all
+    /usr/bin/php /app/code/protected/yii migrate/up --includeModuleMigrations=1
+    /usr/bin/php /app/code/protected/yii module/update-all
 fi
 
 chown -R www-data:www-data /app/data /run/apache2 /run/app /tmp
