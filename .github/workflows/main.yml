@@ -23,5 +23,5 @@ jobs:
         - uses: yesolutions/mirror-action@master
           with:
             REMOTE: ${{ secrets.GIT_URL }}
-            GIT_USERNAME: atridad
+            GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
             GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
