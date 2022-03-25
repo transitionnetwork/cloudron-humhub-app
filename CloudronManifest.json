@@ -1,10 +1,10 @@
 {
-  "id": "ctpr.humhub.app",
+  "id": "cloudron.humhub.app",
   "title": "Humhub",
   "author": "Atridad Lahiji",
   "description": "file://DESCRIPTION.md",
   "tagline": "The flexible open source social media kit.",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "healthCheckPath": "/",
   "memoryLimit": 1342177280,
   "httpPort": 80,
