@@ -23,7 +23,7 @@ sed -i "s/.*'password'.*/'password' => '$CLOUDRON_MYSQL_PASSWORD',/g" /app/data/
 # initial config
 if [[ ! -f /app/data/.initialized ]]; then
     touch /app/data/.initialized
-else
+elif [[ -n "${CLOUDRON_LDAP_SERVER:-}" ]]; then
     # re-setting LDAP config
     /usr/bin/php /app/code/protected/yii settings/set 'ldap' 'enabled' "1"
     /usr/bin/php /app/code/protected/yii settings/set 'ldap' 'hostname' "${CLOUDRON_LDAP_SERVER}"
@@ -48,6 +48,15 @@ else
     /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.password' "${CLOUDRON_MAIL_SMTP_PASSWORD}"
 
     /usr/bin/php /app/code/protected/yii migrate/up --includeModuleMigrations=1 --interactive=0
+else
+    # re-setting mail config
+    /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.systemEmailAddress' "${CLOUDRON_MAIL_FROM}"
+	/usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.systemEmailName' "${CLOUDRON_APP_DOMAIN}"
+    /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.transportType' "smtp"
+    /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.hostname' "${CLOUDRON_MAIL_SMTP_SERVER}"
+    /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.port' "${CLOUDRON_MAIL_SMTP_PORT}"
+    /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.username' "${CLOUDRON_MAIL_SMTP_USERNAME}"
+    /usr/bin/php /app/code/protected/yii settings/set 'base' 'mailer.password' "${CLOUDRON_MAIL_SMTP_PASSWORD}"
 fi
 
 chown -R www-data:www-data /app/data /run/apache2 /run/app /tmp

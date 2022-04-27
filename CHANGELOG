@@ -46,3 +46,7 @@
 
 [1.3.0]
 - Updated to base image 3.2.0
+
+[1.4.0]
+- Updated to humhub 1.11.1
+- Added optional SSO

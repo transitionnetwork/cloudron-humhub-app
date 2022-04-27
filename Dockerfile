@@ -3,7 +3,7 @@ FROM cloudron/base:3.2.0@sha256:ba1d566164a67c266782545ea9809dc611c4152e27686fd1
 RUN mkdir -p /app/code /app/data /app/data/modules /app/data/config /app/data/assets /app/data/runtime /app/data/uploads /app/data/tmp/config
 WORKDIR /app/code
 
-ENV VERSION=1.10.3
+ENV VERSION=1.11.1
 
 # keep the prefork linking below a2enmod since it removes dangling mods-enabled (!)
 # perl kills setlocale() in php - https://bugs.mageia.org/show_bug.cgi?id=25411

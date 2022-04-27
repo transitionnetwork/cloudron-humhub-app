@@ -1,6 +1,6 @@
 # Humhub Cloudron App
 
-This repository contains the Cloudron app package source for Humhub 1.10.3, the flexible open source social media kit.
+This repository contains the Cloudron app package source for Humhub 1.11.1, the flexible open source social media kit.
 Repo: https://github.com/humhub/humhub/
 
 ## Building
@@ -19,3 +19,5 @@ Alternatively, after pulling down this repository, run the following command fro
 cloudron install --image atridadl/cloudron-humhub-app
 ```
 This will install using my docker container so you wont have to build.
+
+** Note: You will need to use --no-sso for cloudron install if you would like to disable SSO.
