@@ -82,11 +82,13 @@ RUN rm -rf /app/code/protected/runtime && ln -s /app/data/runtime /app/code/prot
 
 # add code
 COPY start.sh /app/code/
+COPY db_update.sh /app/code/
 
 RUN chown -R www-data:www-data /app/code
 
 # lock www-data but allow su - www-data to work
 RUN passwd -l www-data && usermod --shell /bin/bash --home /app/data www-data
 RUN chmod +x /app/code/start.sh
+RUN chmod +x /app/code/db_update.sh
 
 CMD [ "/app/code/start.sh" ]

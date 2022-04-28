@@ -4,7 +4,7 @@
   "author": "Atridad Lahiji",
   "description": "file://DESCRIPTION.md",
   "tagline": "The flexible open source social media kit.",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "healthCheckPath": "/",
   "memoryLimit": 1342177280,
   "httpPort": 80,
@@ -31,6 +31,10 @@
       "cron": {
         "schedule": "* * * * *",
         "command": "/usr/bin/php /app/code/protected/yii cron/run"
+      },
+      "update_db": {
+        "schedule": "* * * * *",
+        "command": "/app/code/db_update.sh"
       }
     }
   },

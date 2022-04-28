@@ -1,1 +1,1 @@
-After making your admin account, please restart the app to apply LDAP and SMTP configuration.
+You will be prompted to make an admin user initially.

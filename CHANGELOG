@@ -50,3 +50,6 @@
 [1.4.0]
 - Updated to humhub 1.11.1
 - Added optional SSO
+
+[1.5.0]
+- Removed requirement to restart after initial setup
