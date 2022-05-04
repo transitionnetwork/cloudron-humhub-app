@@ -53,3 +53,6 @@
 
 [1.5.0]
 - Removed requirement to restart after initial setup
+
+[1.5.1]
+- Expose /app/code/static/img to the file browser

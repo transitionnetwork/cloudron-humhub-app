@@ -1,6 +1,6 @@
 FROM cloudron/base:3.2.0@sha256:ba1d566164a67c266782545ea9809dc611c4152e27686fd14060332dd88263ea
 
-RUN mkdir -p /app/code /app/data /app/data/modules /app/data/config /app/data/assets /app/data/runtime /app/data/uploads /app/data/tmp/config
+RUN mkdir -p /app/code /app/data /app/data/modules /app/data/config /app/data/assets /app/data/runtime /app/data/uploads /app/data/tmp/config /app/data/img
 WORKDIR /app/code
 
 ENV VERSION=1.11.1
@@ -79,6 +79,7 @@ RUN cp -r /app/code/protected/config/* /app/data/tmp/config && rm -rf /app/code/
 RUN rm -rf /app/code/assets && ln -s /app/data/assets /app/code/assets
 RUN rm -rf /app/code/uploads && ln -sf /app/data/uploads /app/code/uploads
 RUN rm -rf /app/code/protected/runtime && ln -s /app/data/runtime /app/code/protected/runtime
+RUN cp -r /app/code/static/img/* /app/data/img && rm -rf /app/code/static/img && ln -s /app/data/img /app/code/static/img
 
 # add code
 COPY start.sh /app/code/
