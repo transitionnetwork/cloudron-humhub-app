@@ -4,7 +4,7 @@
   "author": "Atridad Lahiji",
   "description": "file://DESCRIPTION.md",
   "tagline": "The flexible open source social media kit.",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "healthCheckPath": "/",
   "memoryLimit": 1342177280,
   "httpPort": 80,

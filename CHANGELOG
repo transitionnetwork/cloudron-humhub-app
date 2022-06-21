@@ -56,3 +56,7 @@
 
 [1.5.1]
 - Expose /app/code/static/img to the file browser
+
+[1.6.0]
+- Updated to humhub 1.11.2
+- Updated documentation in README

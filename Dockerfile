@@ -3,7 +3,8 @@ FROM cloudron/base:3.2.0@sha256:ba1d566164a67c266782545ea9809dc611c4152e27686fd1
 RUN mkdir -p /app/code /app/data /app/data/modules /app/data/config /app/data/assets /app/data/runtime /app/data/uploads /app/data/tmp/config /app/data/img
 WORKDIR /app/code
 
-ENV VERSION=1.11.1
+ENV HUMHUB_VERSION=1.11.2
+ENV REPO_URL=https://github.com/humhub/humhub/archive/refs/tags/v${VERSION}.tar.gz
 
 # keep the prefork linking below a2enmod since it removes dangling mods-enabled (!)
 # perl kills setlocale() in php - https://bugs.mageia.org/show_bug.cgi?id=25411
@@ -59,7 +60,7 @@ RUN sed -e 's,^logfile=.*$,logfile=/run/supervisord.log,' -i /etc/supervisor/sup
 
 RUN npm install -g grunt-cli less
 
-RUN curl -L https://github.com/humhub/humhub/archive/refs/tags/v${VERSION}.tar.gz | tar zx --strip-components 1 -C /app/code
+RUN curl -L ${REPO_URL} | tar zx --strip-components 1 -C /app/code
 RUN rm /app/code/index-test.php
 RUN mv /app/code/.htaccess.dist /app/code/.htaccess
 ENV DEBUG_TEXT="YII_DEBUG"
