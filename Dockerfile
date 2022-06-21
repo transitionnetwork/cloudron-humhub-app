@@ -4,7 +4,7 @@ RUN mkdir -p /app/code /app/data /app/data/modules /app/data/config /app/data/as
 WORKDIR /app/code
 
 ENV HUMHUB_VERSION=1.11.2
-ENV REPO_URL=https://github.com/humhub/humhub/archive/refs/tags/v${VERSION}.tar.gz
+ENV REPO_URL=https://github.com/humhub/humhub/archive/refs/tags/v${HUMHUB_VERSION}.tar.gz
 
 # keep the prefork linking below a2enmod since it removes dangling mods-enabled (!)
 # perl kills setlocale() in php - https://bugs.mageia.org/show_bug.cgi?id=25411
